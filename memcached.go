@@ -1,3 +1,25 @@
+// memcached.go — the partial Memcached cache.Cache adapter (package memcachedcache, github.com/ubgo/cache-memcached).
+//
+// Package role: memcachedcache is the Memcached adapter in the ubgo/cache
+// family. Memcached's protocol is intentionally minimal, so this is a PARTIAL
+// implementation by design — it does NOT pass the shared conformance suite.
+// See doc.go for the overview and the unsupported-ops contract.
+//
+// This file: defines the minimal `client` test seam, Cache, New/newWith, the
+// secs/mapErr helpers, every cache.Cache method, and unsupportedIter.
+// Invariants an AI must keep: TTL, DeleteByPrefix and Iterate return
+// ErrUnsupported EXPLICITLY (Iterate via a zero-yield iterator whose Err()
+// explains why) — never add client-side emulation; Decr floors at 0
+// (Memcached counters are unsigned, surfaced as-is); Incr/Decr on a missing
+// key do the atomic counter-init dance — the ADD is the linearisation point,
+// a racing initialiser gets ErrNotStored and retries the incr/decr so
+// concurrent first-writers never lose an update; Close only flips a local
+// flag, never closing a possibly-shared *memcache.Client.
+//
+// AI-context: adapter-of-cache.Cache that is partial-by-protocol-design; if
+// you change which ops are supported, update doc.go, the README table and
+// memcached_test.go together.
+
 package memcachedcache
 
 import (

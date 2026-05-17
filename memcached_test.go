@@ -1,3 +1,5 @@
+// memcached_test.go — tests for the memcached adapter (in-process fake client: supported ops, counters, concurrent Incr race, explicit ErrUnsupported, Close).
+
 package memcachedcache
 
 import (

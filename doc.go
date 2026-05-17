@@ -1,3 +1,17 @@
+// doc.go — canonical package documentation (package memcachedcache, github.com/ubgo/cache-memcached).
+//
+// Package role: this file is the authoritative overview for the ubgo/cache
+// Memcached adapter; start here before reading memcached.go (the adapter).
+//
+// This file: holds ONLY the package doc comment below — no code. It is the
+// canonical statement of the partial-by-design contract: TTL,
+// DeleteByPrefix and Iterate are ErrUnsupported; Decr floors at 0; the
+// atomic counter-init dance for Incr/Decr on a missing key.
+//
+// AI-context: the // Package … block below is the godoc package doc; do not
+// duplicate it (revive flags duplicate package comments). The blank line
+// after this header keeps it a file header, not a second package comment.
+
 // Package memcachedcache is the Memcached adapter for github.com/ubgo/cache,
 // backed by github.com/bradfitz/gomemcache.
 //
