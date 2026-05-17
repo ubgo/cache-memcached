@@ -4,6 +4,8 @@ Memcached adapter for Go, implementing the [`github.com/ubgo/cache`](https://git
 
 If you searched for "Go Memcached cache library", "gomemcache wrapper", "Memcached adapter Golang", or "use Memcached with ubgo/cache" — this is the Memcached backend of the `ubgo/cache` family. Because Memcached's wire protocol is intentionally minimal, three operations cannot be served and return `cache.ErrUnsupported`; everything else works and is unit-tested without a server.
 
+> **Documentation:** a full per-feature cookbook with use cases, runnable snippets, and the "partial by protocol" framing for every method lives in [`docs/README.md`](docs/README.md).
+
 ## Why this adapter
 
 - **Interop, not greenfield.** If you already run Memcached, this lets that fleet back any code written against `cache.Cache` without standing up Redis or Postgres.
