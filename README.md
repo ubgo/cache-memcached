@@ -1,5 +1,7 @@
 # ubgo/cache-memcached — Memcached adapter for Go
 
+![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+
 Memcached adapter for Go, implementing the [`github.com/ubgo/cache`](https://github.com/ubgo/cache) contract on top of [`gomemcache`](https://github.com/bradfitz/gomemcache). It exists for **drop-in interop with an existing Memcached fleet** — and it is **partial by Memcached protocol design**, not by omission.
 
 If you searched for "Go Memcached cache library", "gomemcache wrapper", "Memcached adapter Golang", or "use Memcached with ubgo/cache" — this is the Memcached backend of the `ubgo/cache` family. Because Memcached's wire protocol is intentionally minimal, three operations cannot be served and return `cache.ErrUnsupported`; everything else works and is unit-tested without a server.
