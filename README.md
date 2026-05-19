@@ -1,6 +1,8 @@
 # ubgo/cache-memcached — Memcached adapter for Go
 
-![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
+
+[![Go Reference](https://pkg.go.dev/badge/github.com/ubgo/cache-memcached.svg)](https://pkg.go.dev/github.com/ubgo/cache-memcached) [![Go Report Card](https://goreportcard.com/badge/github.com/ubgo/cache-memcached)](https://goreportcard.com/report/github.com/ubgo/cache-memcached) [![test](https://github.com/ubgo/cache-memcached/actions/workflows/test.yml/badge.svg)](https://github.com/ubgo/cache-memcached/actions/workflows/test.yml) [![lint](https://github.com/ubgo/cache-memcached/actions/workflows/lint.yml/badge.svg)](https://github.com/ubgo/cache-memcached/actions/workflows/lint.yml) ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen) [![tag](https://img.shields.io/github/v/tag/ubgo/cache-memcached?sort=semver)](https://github.com/ubgo/cache-memcached/tags) [![license](https://img.shields.io/badge/license-source--available-blue)](./LICENSE) ![Go](https://img.shields.io/badge/go-1.24-00ADD8?logo=go)
+
 
 Memcached adapter for Go, implementing the [`github.com/ubgo/cache`](https://github.com/ubgo/cache) contract on top of [`gomemcache`](https://github.com/bradfitz/gomemcache). It exists for **drop-in interop with an existing Memcached fleet** — and it is **partial by Memcached protocol design**, not by omission.
 
